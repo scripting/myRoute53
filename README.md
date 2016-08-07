@@ -1,6 +1,6 @@
 ### myRoute53
 
-A simple utility that creates a JSON file with a map of your Amazon Route53 names. Runs in Node.js.
+A simple utility that creates a JSON file with a map of your <a href="https://en.wikipedia.org/wiki/Amazon_Route_53">Amazon Route53</a> names. Runs in Node.js.
 
 #### How to
 
@@ -25,4 +25,8 @@ When it's done, two files are created: names.json and zones.json.
 Route53 is the most expensive service for me, I wanted to understand why and what I could do to fix it.
 
 I also want to move a server that has a lot of A records mapped to it. I wanted to know what they all were. 
+
+#### Thanks
+
+Thanks to <a href="https://github.com/leorossi">Leo Rossi</a>, the author of <a href="https://github.com/chilts/nice-route53">nice-route53</a>, which is nice, and made this utility possible. Amazon's JavaScript API for Route53 is particularly difficult to comprehend. With nice-route53 I was able to get started immediately because it does what everyone who wants to program Route53 wants to do. 
 
