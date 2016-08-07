@@ -1,4 +1,4 @@
-var myProductName = "getRoute53Names", myVerion = "0.40a";
+var myProductName = "getRoute53Names", myVerion = "0.40b";
 
 var fs = require ("fs");
 var Route53 = require ("nice-route53");
@@ -10,34 +10,37 @@ function buildNameJson (callback) {
 		secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 		};
 	var r53 = new Route53 (options);
-	r53.zones (function (err, domains) {
+	r53.zones (function (err, zones) {
+		function listCnames (records) {
+			if (records !== undefined) {
+				for (var i = 0; i < records.length; i++) {
+					var record = records [i];
+					if (record.type == "CNAME") {
+						console.log ("\t" + record.name);
+						}
+					}
+				}
+			}
 		function nextDomain (ix) {
-			if (ix < domains.length) {
-				var domain = domains [ix];
+			if (ix < zones.length) {
+				var domain = zones [ix];
 				r53.records (domain.zoneId, function (err, records) {
-					console.log ("\n" + (ix + 1) + " of " + domains.length + ": " + domain.name + "\n");
+					console.log ("\n" + (ix + 1) + " of " + zones.length + ": " + domain.name + "\n");
 					myRoute53Names [domain.name] = {
 						records: records
 						};
-					if (records !== undefined) {
-						for (var i = 0; i < records.length; i++) {
-							var record = records [i];
-							if (record.type == "CNAME") {
-								console.log ("\t" + record.name);
-								}
-							}
-						}
+					listCnames (records);
 					nextDomain (ix + 1);
 					});
 				}
 			else {
 				if (callback !== undefined) {
-					callback (domains, myRoute53Names);
+					callback (zones, myRoute53Names);
 					}
 				}
 			}
 		if (!err) {
-			if (domains !== undefined) {
+			if (zones !== undefined) {
 				nextDomain (0);
 				}
 			}
