@@ -4,9 +4,9 @@ A simple utility that creates a JSON file with a map of your <a href="https://en
 
 #### How to
 
-You must have Node.js installed.
+You must have <a href="https://nodejs.org/en/download/">Node.js</a> installed.
 
-Download the folder, open the folder in your terminal app, and run:
+Download the <a href="https://github.com/scripting/myRoute53/archive/master.zip">folder</a>, open the folder in your terminal app, and run:
 
 <code>npm install</code>
 
@@ -22,11 +22,11 @@ When it's done, two files are created: names.json and zones.json.
 
 #### Why?
 
-Route53 is the most expensive service for me, I wanted to understand why and what I could do to fix it.
+Route53 is the most expensive AWS service for me. I wanted to understand why and what I could do to fix it.
 
 I also want to move a server that has a lot of A records mapped to it. I wanted to know what they all were. 
 
 #### Thanks
 
-Thanks to <a href="https://github.com/leorossi">Leo Rossi</a>, the author of <a href="https://github.com/chilts/nice-route53">nice-route53</a>, which is nice, and made this utility possible. Amazon's JavaScript API for Route53 is particularly difficult to comprehend. With nice-route53 I was able to get started immediately because it does what everyone who wants to program Route53 wants to do. 
+Thanks to <a href="https://github.com/leorossi">Leo Rossi</a>, the author of <a href="https://github.com/chilts/nice-route53">nice-route53</a>, which <i>is</i> nice. It made this utility possible. Amazon's JavaScript API for Route53 is particularly difficult to comprehend. With nice-route53 I was able to get started immediately because it does what everyone who wants to program Route53 wants to do. 
 
