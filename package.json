@@ -1,0 +1,13 @@
+{
+	"name": "getRoute53Names",
+	"description": "Create a JSON file with a map of your Route53 names.",
+	"author": "Dave Winer <dave@smallpicture.com>",
+	"version": "0.40.0",
+	"dependencies" : {
+		"nice-route53": "*"
+		}, 
+	"license": "MIT",
+	"engines": {
+		"node": "0.10.*"
+		}
+	}
