@@ -21,7 +21,7 @@ function buildNameJson (callback) {
 					}
 				}
 			}
-		function nextDomain (ix) {
+		function nextZone (ix) {
 			if (ix < zones.length) {
 				var domain = zones [ix];
 				r53.records (domain.zoneId, function (err, records) {
@@ -30,7 +30,7 @@ function buildNameJson (callback) {
 						records: records
 						};
 					listCnames (records);
-					nextDomain (ix + 1);
+					nextZone (ix + 1);
 					});
 				}
 			else {
@@ -41,7 +41,7 @@ function buildNameJson (callback) {
 			}
 		if (!err) {
 			if (zones !== undefined) {
-				nextDomain (0);
+				nextZone (0);
 				}
 			}
 		});
