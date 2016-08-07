@@ -23,10 +23,10 @@ function buildNameJson (callback) {
 			}
 		function nextZone (ix) {
 			if (ix < zones.length) {
-				var domain = zones [ix];
-				r53.records (domain.zoneId, function (err, records) {
-					console.log ("\n" + (ix + 1) + " of " + zones.length + ": " + domain.name + "\n");
-					myRoute53Names [domain.name] = {
+				var zone = zones [ix];
+				r53.records (zone.zoneId, function (err, records) {
+					console.log ("\n" + (ix + 1) + " of " + zones.length + ": " + zone.name + "\n");
+					myRoute53Names [zone.name] = {
 						records: records
 						};
 					listCnames (records);
