@@ -26,7 +26,13 @@ Route53 is the most expensive AWS service for me. I wanted to understand why and
 
 I also want to move a server that has a lot of A records mapped to it. I wanted to know what they all were. 
 
+#### Blog post
+
+I wrote a <a href="http://scripting.com/2016/08/08/makingAmazonsDnsApiSimple.html">blog post</a> about this utility. 
+
 #### Thanks
 
 Thanks to <a href="https://github.com/leorossi">Leo Rossi</a>, the author of <a href="https://github.com/chilts/nice-route53">nice-route53</a>, which <i>is</i> nice. It made this utility possible. Amazon's JavaScript API for Route53 is particularly difficult to comprehend. With nice-route53 I was able to get started immediately because it does what everyone who wants to program Route53 wants to do. 
+
+<a href="http://davewiner.com/">Dave Winer</a>, August 2016
 
