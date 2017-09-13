@@ -1,4 +1,4 @@
-var myProductName = "getRoute53Names", myVerion = "0.40b";
+var myProductName = "getRoute53Names", myVerion = "0.40b"; 
 
 var fs = require ("fs");
 var Route53 = require ("nice-route53");
